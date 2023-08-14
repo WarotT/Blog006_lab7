@@ -1,0 +1,21 @@
+                    <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+                    <button class="btn" id="green">
+                        <i class = "fa fa-thumbs-up fa-lg" aria-hidden = "true"></i>
+                    </button>
+                    <button class="btn" id="green">
+                        <i class = "fa fa-thumbs-down fa-lg" aria-hidden = "true"></i>
+
+
+                    } else if (e.target.matches('.like-item')) {
+                        console.log(e.target.dataset.id);
+                        axios.post($url+ '/vote/' + e.target.dataset.id).then((response) => {
+                            Swal.fire(
+                                'Success!',
+                                'Your status has been edited.',
+                                'success'
+                            );
+                            setTimeout(() => {
+                                        window.location.href = $url + '/content';
+                                    }, 500);
+                        });
+                    }
